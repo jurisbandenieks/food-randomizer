@@ -1,0 +1,10 @@
+@import "../../sass/abstract/variables";
+
+.header {
+  flex: 0 1 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-secondary;
+  color: $color-light;
+}

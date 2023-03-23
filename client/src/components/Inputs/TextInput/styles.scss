@@ -1,0 +1,49 @@
+@import "../../../sass/abstract/variables";
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid;
+  outline: 0;
+  font-size: 16px;
+  color: $color-grey-dark-3;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 16px;
+  cursor: text;
+  top: 20px;
+}
+
+label,
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: $color-tertiary;
+}
+
+.form__field:focus ~ .form__label {
+  color: $color-tertiary;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-bottom: 2px solid $color-tertiary;
+}

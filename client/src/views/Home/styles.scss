@@ -1,0 +1,24 @@
+@import "../../sass/abstract/variables";
+
+.home {
+  &__container {
+    height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    height: 100%;
+    background-color: $color-light;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+
+  &__output {
+    white-space: pre-wrap;
+  }
+}

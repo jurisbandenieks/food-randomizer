@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-app.get("/api", async (req, res) => {
+app.get("/", async (req, res) => {
   res.send("Server is running");
 });
 

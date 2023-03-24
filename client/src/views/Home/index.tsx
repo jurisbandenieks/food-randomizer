@@ -77,7 +77,7 @@ const Home = () => {
             onChange={(val) => setAllergies(String(val))}
           />
           <div className="center-text my-sm">
-            <Button type="submit" disabled={!!loading}>
+            <Button type="submit" disabled={!!loading} classes="btn--block">
               {!!recipie ? "Try Again" : "Submit"}
             </Button>
           </div>

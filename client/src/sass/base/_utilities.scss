@@ -1,6 +1,9 @@
 .center-text {
   text-align: center !important;
 }
+.m-0 {
+  margin: 0 !important;
+}
 .mb-sm {
   margin-bottom: 1.5rem !important;
 }
@@ -32,4 +35,28 @@
 
 .my-sm {
   margin: 1.5rem 0 !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.card-1 {
+  box-shadow: $box-shadow-1;
+}
+
+.card-2 {
+  box-shadow: $box-shadow-2;
+}
+
+.card-3 {
+  box-shadow: $box-shadow-3;
+}
+
+.card-4 {
+  box-shadow: $box-shadow-4;
+}
+
+.card-5 {
+  box-shadow: $box-shadow-5;
 }

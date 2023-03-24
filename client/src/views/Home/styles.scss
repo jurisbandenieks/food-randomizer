@@ -15,11 +15,16 @@
 
     @include respond(big) {
       width: 70%;
-      margin: 0 auto;
+      margin: 12px auto;
     }
   }
 
   &__form {
+    background-color: $color-grey-light-1;
+    padding: 12px 24px;
+    border-radius: 2px;
+    box-shadow: $box-shadow-1;
+
     @include respond(big) {
       width: 50%;
       margin: 0 auto;
@@ -31,6 +36,11 @@
   }
 
   &__output {
+    margin: 18px auto;
+    background-color: $color-grey-light-1;
+    padding: 12px 24px;
+    border-radius: 2px;
+    box-shadow: $box-shadow-1;
     white-space: pre-wrap;
   }
 }

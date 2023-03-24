@@ -1,4 +1,5 @@
 @import "../../../sass/abstract/variables";
+@import "../../../sass/abstract/mixins";
 
 .btn {
   position: relative;
@@ -16,47 +17,52 @@
 
   transition: background-color 0.3s;
   background-color: $color-light;
-}
+  color: $color-black;
 
-.btn:hover,
-.btn:focus {
-  background-color: $color-grey-light-1;
-}
+  &--block {
+    width: 100%;
+  }
 
-.btn > * {
-  position: relative;
-}
+  &:hover,
+  &:focus {
+    background-color: $color-grey-light-1;
+  }
 
-.btn span {
-  display: block;
-  padding: 12px 24px;
-}
+  & > * {
+    position: relative;
+  }
 
-.btn:before {
-  content: "";
+  & span {
+    display: block;
+    padding: 12px 24px;
+  }
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  &:before {
+    content: "";
 
-  display: block;
-  width: 0;
-  padding-top: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-  border-radius: 100%;
+    display: block;
+    width: 0;
+    padding-top: 0;
 
-  background-color: $color-light;
+    border-radius: 100%;
 
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+    background-color: $color-light;
 
-.btn:active:before {
-  width: 120%;
-  padding-top: 120%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 
-  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+  &:active:before {
+    width: 120%;
+    padding-top: 120%;
+
+    transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+  }
 }

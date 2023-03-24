@@ -4,15 +4,17 @@ interface IButton {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   children: React.ReactNode;
+  classes?: string;
 }
 
 const ButtonFC: React.FC<IButton> = ({
   type = "button",
   disabled = false,
-  children
+  children,
+  classes = ""
 }) => {
   return (
-    <button className="btn" type={type} disabled={disabled}>
+    <button className={`btn ${classes}`} type={type} disabled={disabled}>
       <span>{children}</span>
     </button>
   );

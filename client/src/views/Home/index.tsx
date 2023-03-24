@@ -10,12 +10,12 @@ import recipeSubmitHandler from "../../utils/recipe-submit";
 import "./styles.scss";
 
 const Home = () => {
-  const alergiesRef: null | HTMLInputElement = null;
+  const allergiesRef: null | HTMLInputElement = null;
   const inventoryRef: null | HTMLInputElement = null;
   const ageRef: null | HTMLInputElement = null;
   const weightRef: null | HTMLInputElement = null;
 
-  const [alergies, setAlergies] = useState<string>("");
+  const [allergies, setAllergies] = useState<string>("");
   const [inventory, setInventory] = useState<string>("");
   const [age, setAge] = useState<number>(30);
   const [weight, setWeight] = useState<number>(70);
@@ -23,7 +23,7 @@ const Home = () => {
 
   const { submitHandler, recipie, loading } = recipeSubmitHandler({
     inventory,
-    alergies,
+    allergies,
     age,
     weight,
     isBaby
@@ -57,7 +57,7 @@ const Home = () => {
             placeholder="What is your age?"
             name="age"
             ref={ageRef}
-            label={`Age (${isBaby ? "monts" : "years"})`}
+            label={`Age (${isBaby ? "months" : "years"})`}
             onChange={(val) => setAge(Number(val))}
           />
           <TextInput
@@ -70,11 +70,11 @@ const Home = () => {
           />
           <TextInput
             type="text"
-            placeholder="Do you have any alergies?"
-            name="alergies"
-            ref={alergiesRef}
-            label="Alergies"
-            onChange={(val) => setAlergies(String(val))}
+            placeholder="Do you have any allergies?"
+            name="allergies"
+            ref={allergiesRef}
+            label="Allergies"
+            onChange={(val) => setAllergies(String(val))}
           />
           <div className="center-text my-sm">
             <Button type="submit" disabled={!!loading}>

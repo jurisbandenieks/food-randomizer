@@ -3,7 +3,7 @@ import axios from "axios";
 
 interface IProps {
   inventory: string;
-  alergies: string;
+  allergies: string;
   age: number;
   weight: number;
   isBaby: boolean;
@@ -17,8 +17,8 @@ function fetchRecipe(props: IProps) {
     setLoading(true);
     setRecipie("");
 
-    const promptAdult = `What recipie I can make from these ingridients - ${props.inventory}, if I have ${props.alergies} alergies and I am ${props.age} old and have weigh of ${props.weight}? Every step in new line! And give me recipie name!`;
-    const promptBaby = `What recipie I can make for a baby from these ingridients - ${props.inventory}, if baby has ${props.alergies} alergies and is ${props.age} months old and have weigh of ${props.weight}? Every step in new line! And give me recipie name! Is this safe for a baby?`;
+    const promptAdult = `What recipie I can make from these ingridients - ${props.inventory}, if I have ${props.allergies} alergies and I am ${props.age} old and have weigh of ${props.weight}? Every step in new line! And give me recipie name!`;
+    const promptBaby = `What recipie I can make for a baby from these ingridients - ${props.inventory}, if baby has ${props.allergies} alergies and is ${props.age} months old and have weigh of ${props.weight}? Every step in new line! And give me recipie name! Is this safe for a baby?`;
 
     const { data } = await axios.post(
       `${import.meta.env.VITE_SERVER_API}/recipies`,

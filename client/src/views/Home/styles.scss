@@ -1,4 +1,5 @@
 @import "../../sass/abstract/variables";
+@import "../../sass/abstract/mixins";
 
 .home {
   &__container {
@@ -11,7 +12,18 @@
   &__content {
     flex: 1 1 auto;
     height: 100%;
-    background-color: $color-light;
+
+    @include respond(big) {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  &__form {
+    @include respond(big) {
+      width: 50%;
+      margin: 0 auto;
+    }
   }
 
   button {

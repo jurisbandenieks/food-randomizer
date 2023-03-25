@@ -24,14 +24,6 @@
     padding: 12px 24px;
     border-radius: 2px;
     box-shadow: $box-shadow-1;
-
-    @include respond(big) {
-      width: 50%;
-      margin: 0 auto;
-    }
-  }
-
-  button {
     margin: 0 auto;
   }
 
@@ -42,5 +34,16 @@
     border-radius: 2px;
     box-shadow: $box-shadow-1;
     white-space: pre-wrap;
+  }
+
+  @include respond(big) {
+    &__output,
+    &__form {
+      width: 50%;
+    }
+  }
+
+  button {
+    margin: 0 auto;
   }
 }

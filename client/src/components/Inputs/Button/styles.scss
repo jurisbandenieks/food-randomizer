@@ -28,6 +28,10 @@
     background-color: $color-grey-light-1;
   }
 
+  &:disabled {
+    color: $color-grey-dark;
+  }
+
   & > * {
     position: relative;
   }

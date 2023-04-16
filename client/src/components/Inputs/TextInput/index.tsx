@@ -1,10 +1,11 @@
 import "./styles.scss";
 
 interface ITextInput {
-  placeholder: string;
-  ref: React.Ref<HTMLInputElement>;
-  name: string;
-  label: string;
+  placeholder?: string;
+  value?: string;
+  ref?: React.Ref<HTMLInputElement>;
+  name?: string;
+  label?: string;
   type: string;
   onChange: (value: string | number) => void;
 }
@@ -12,6 +13,7 @@ interface ITextInput {
 const TextInput: React.FC<ITextInput> = ({
   placeholder,
   ref = null,
+  value = "",
   name,
   label,
   onChange
@@ -22,6 +24,7 @@ const TextInput: React.FC<ITextInput> = ({
         className="form__field"
         type="text"
         ref={ref}
+        value={value}
         name={name}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}

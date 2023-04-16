@@ -1,0 +1,26 @@
+@import "../../sass/abstract/mixins";
+@import "../../sass/abstract/variables";
+
+.login {
+  margin: 0 auto;
+  position: relative;
+  flex: 1;
+  width: 90%;
+
+  &__form {
+    @include absCenter;
+    width: 90%;
+    background-color: $color-secondary;
+    padding: 24px;
+    border-radius: 2px;
+    box-shadow: $box-shadow-1;
+
+    @include respond(big) {
+      width: 360px;
+    }
+  }
+
+  &__google {
+    width: 100% !important;
+  }
+}

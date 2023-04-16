@@ -1,4 +1,9 @@
 import { FormEvent, useState } from "react";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "firebase/auth";
 
 import Header from "../../components/Header";
 import Button from "../../components/Inputs/Button";

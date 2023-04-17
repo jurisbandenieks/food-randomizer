@@ -10,7 +10,7 @@ import Button from "../../components/Inputs/Button";
 import SwitchInput from "../../components/Inputs/SwitchInput";
 import TextInput from "../../components/Inputs/TextInput";
 
-import recipeSubmitHandler from "../../utils/recipe-submit";
+import recipeSubmitHandler from "../../hooks/recipeSubmit";
 
 import "./styles.scss";
 

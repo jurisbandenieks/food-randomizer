@@ -1,6 +1,7 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
+
 import {
   GoogleAuthProvider,
   signInWithRedirect,
@@ -11,12 +12,16 @@ import { auth } from "../../firebase/init";
 
 import SwitchInput from "../../components/Inputs/SwitchInput";
 import TextInput from "../../components/Inputs/TextInput";
-import "./styles.scss";
 import Button from "../../components/Inputs/Button";
+
+import { useActions } from "../../hooks/useActions";
+
+import "./styles.scss";
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
+  const { login } = useActions();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -52,8 +57,10 @@ const Login = () => {
     fetchGoogleCredentials();
   }, [auth]);
 
-  const submitForm = (event: FormEvent) => {
+  const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    login(email, password);
   };
 
   const loginWithGoogle = async () => {

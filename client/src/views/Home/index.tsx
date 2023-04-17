@@ -1,9 +1,4 @@
-import { FormEvent, useState } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
-} from "firebase/auth";
+import { useState } from "react";
 
 import Header from "../../components/Header";
 import Button from "../../components/Inputs/Button";
@@ -34,7 +29,7 @@ const Home = () => {
     isBaby
   });
 
-  const submitForm = (event: FormEvent) => {
+  const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     submitHandler();
   };

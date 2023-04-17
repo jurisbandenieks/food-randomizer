@@ -1,16 +1,17 @@
+import { UserCredential } from "firebase/auth";
 import { ActionType } from "../action-types/userTypes";
 import { Action } from "../actions/userActions";
 
 interface LoginState {
   loading: boolean;
   error: string | null;
-  data: string[];
+  user: UserCredential | null;
 }
 
 const initialState = {
   loading: false,
   error: null,
-  data: []
+  user: null
 };
 
 export const loginReducer = (
@@ -19,11 +20,27 @@ export const loginReducer = (
 ): LoginState => {
   switch (action.type) {
     case ActionType.LOGIN:
-      return { loading: true, error: null, data: [] };
+      return { loading: true, error: null, user: null };
     case ActionType.LOGIN_SUCCESS:
-      return { loading: false, error: null, data: action.payload };
+      return { loading: false, error: null, user: action.payload };
     case ActionType.LOGIN_ERROR:
-      return { loading: false, error: action.payload, data: [] };
+      return { loading: false, error: action.payload, user: null };
+    default:
+      return state;
+  }
+};
+
+export const googleLoginReducer = (
+  state: LoginState = initialState,
+  action: Action
+): LoginState => {
+  switch (action.type) {
+    case ActionType.LOGIN:
+      return { loading: true, error: null, user: null };
+    case ActionType.LOGIN_SUCCESS:
+      return { loading: false, error: null, user: action.payload };
+    case ActionType.LOGIN_ERROR:
+      return { loading: false, error: action.payload, user: null };
     default:
       return state;
   }

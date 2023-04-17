@@ -1,25 +1,5 @@
-import {
-  createStore,
-  combineReducers,
-  applyMiddleware,
-  Store,
-  AnyAction
-} from "redux";
-import thunk, { ThunkMiddleware } from "redux-thunk";
-import { loginReducer } from "./reducers/userReducers";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
 
-export interface RootState {}
-
-const reducer = combineReducers<RootState>({
-  login: loginReducer
-});
-
-export const initialState: RootState = {};
-
-const store: Store<RootState, AnyAction> = createStore(
-  reducer,
-  initialState,
-  applyMiddleware(thunk as ThunkMiddleware<RootState, AnyAction>)
-);
-
-export default store;
+export const store = createStore(reducers, {}, applyMiddleware(thunk));

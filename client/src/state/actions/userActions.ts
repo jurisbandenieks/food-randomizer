@@ -1,3 +1,4 @@
+import { UserCredential } from "firebase/auth";
 import { ActionType } from "../action-types/userTypes";
 
 interface LoginAction {
@@ -6,7 +7,7 @@ interface LoginAction {
 
 interface LoginSuccessAction {
   type: ActionType.LOGIN_SUCCESS;
-  payload: string[];
+  payload: UserCredential;
 }
 
 interface LoginFailedAction {
@@ -14,4 +15,24 @@ interface LoginFailedAction {
   payload: string;
 }
 
-export type Action = LoginAction | LoginSuccessAction | LoginFailedAction;
+interface GoogleLoginAction {
+  type: ActionType.GOOGLE_LOGIN;
+}
+
+interface GoogleLoginSuccessAction {
+  type: ActionType.GOOGLE_LOGIN_SUCCESS;
+  payload: UserCredential;
+}
+
+interface GoogleLoginFailedAction {
+  type: ActionType.GOOGLE_LOGIN_ERROR;
+  payload: string;
+}
+
+export type Action =
+  | LoginAction
+  | LoginSuccessAction
+  | LoginFailedAction
+  | GoogleLoginAction
+  | GoogleLoginSuccessAction
+  | GoogleLoginFailedAction;

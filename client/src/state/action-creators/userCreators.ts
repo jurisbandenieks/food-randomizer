@@ -24,10 +24,6 @@ export const login = (email: string, password: string) => {
 export const googleLogin = (auth: Auth) => {
   return async (dispatch: Dispatch<Action>) => {
     try {
-      dispatch({
-        type: ActionType.GOOGLE_LOGIN
-      });
-
       const result: UserCredential | null = await getRedirectResult(auth);
 
       if (result) {
@@ -35,8 +31,8 @@ export const googleLogin = (auth: Auth) => {
         // const token = credential?.accessToken;
 
         dispatch({
-          type: ActionType.GOOGLE_LOGIN,
-          payload: result
+          type: ActionType.GOOGLE_LOGIN_SUCCESS,
+          payload: result.user
         });
       }
     } catch (err) {

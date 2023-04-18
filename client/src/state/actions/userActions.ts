@@ -1,4 +1,4 @@
-import { UserCredential } from "firebase/auth";
+import { User } from "firebase/auth";
 import { ActionType } from "../action-types/userTypes";
 
 interface LoginAction {
@@ -7,7 +7,7 @@ interface LoginAction {
 
 interface LoginSuccessAction {
   type: ActionType.LOGIN_SUCCESS;
-  payload: UserCredential;
+  payload: User;
 }
 
 interface LoginFailedAction {
@@ -21,7 +21,7 @@ interface GoogleLoginAction {
 
 interface GoogleLoginSuccessAction {
   type: ActionType.GOOGLE_LOGIN_SUCCESS;
-  payload: UserCredential;
+  payload: User;
 }
 
 interface GoogleLoginFailedAction {

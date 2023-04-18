@@ -4,5 +4,5 @@ export enum ActionType {
   LOGIN_ERROR = "login_error",
   GOOGLE_LOGIN = "google_login",
   GOOGLE_LOGIN_SUCCESS = "google_login_success",
-  GOOGLE_LOGIN_ERROR = "google_login_success"
+  GOOGLE_LOGIN_ERROR = "google_login_error"
 }

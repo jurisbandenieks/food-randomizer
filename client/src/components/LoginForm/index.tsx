@@ -18,7 +18,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="login__form" onSubmit={submitForm}>
+    <form onSubmit={submitForm}>
       <div className="heading-secondary">
         {isNewUser ? "Register" : "Login"}
       </div>

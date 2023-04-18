@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { auth } from "../../firebase/init";
 import GoogleButton from "react-google-button";
 
+import "./styles.scss";
+
 const GoogleLoginButton = () => {
   const provider = new GoogleAuthProvider();
   const { googleLogin } = useActions();
@@ -23,7 +25,7 @@ const GoogleLoginButton = () => {
         <div>Loading</div>
       ) : (
         <GoogleButton
-          className="login__google"
+          className="login-google"
           type="light"
           onClick={() => signInWithRedirect(auth, provider)}
         />

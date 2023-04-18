@@ -1,15 +1,7 @@
 import { ActionType } from "../action-types/userTypes";
 import { Dispatch } from "redux";
 import { Action } from "../actions/userActions";
-import { useNavigate } from "react-router-dom";
-import {
-  Auth,
-  GoogleAuthProvider,
-  UserCredential,
-  getRedirectResult
-} from "firebase/auth";
-
-const navigate = useNavigate();
+import { Auth, UserCredential, getRedirectResult } from "firebase/auth";
 
 export const login = (email: string, password: string) => {
   return async (dispatch: Dispatch<Action>) => {
